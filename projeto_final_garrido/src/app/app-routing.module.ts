@@ -4,8 +4,7 @@ import { ContadorComponentComponent } from './contador-component/contador-compon
 
 const routes: Routes = [{
   path: 'contador', component: ContadorComponentComponent
-}
-];
+}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

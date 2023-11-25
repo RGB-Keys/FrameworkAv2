@@ -7,5 +7,16 @@ import {MatButtonModule} from '@angular/material/button';
   styleUrls: ['./contador-component.component.css']
 })
 export class ContadorComponentComponent {
-  valor:number=0;
+  valor:number 
+  constructor(){
+    this.valor = 0
+  }
+  aumentar(){
+    this.valor++
+  }
+  diminuir(){
+    if(this.valor>0){
+      this.valor--
+    }
+  }
 }
