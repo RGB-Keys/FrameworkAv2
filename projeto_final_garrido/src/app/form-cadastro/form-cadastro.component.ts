@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,7 @@ export class FormCadastroComponent implements OnInit {
 
   public formLogin:FormGroup;
 
-  constructor(private fb:FormBuilder, private route:Router, private toast:ToastrService){
+  constructor(private fb:FormBuilder, private toast:ToastrService){
     this.formLogin = this.criarFormLogin();
   }
 
