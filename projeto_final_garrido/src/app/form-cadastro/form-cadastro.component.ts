@@ -35,7 +35,7 @@ export class FormCadastroComponent implements OnInit {
   criarUsuario() {
     const { username, password } = this.formCadastro.value;
 
-    const validacao = username == 'usuario' && password == 111111;
+    const validacao = username == 'manoel' && password == 111111;
 
     if(validacao){
       this.toast.success(`Olá, ${username}, seu cadastro foi realizado com sucesso.`)
