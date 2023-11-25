@@ -1,1 +1,24 @@
-<p>list-items works!</p>
+<div class="firstdiv">
+    <h1>Top 5 Carros Clássicos</h1>
+<br>
+<div>
+   <h3>Lista de Produtos</h3>
+    <table class="firsttable">
+        <tr>
+            <th>Nome</th>
+            <th>Modelo</th>
+            <th>Ano</th>
+            <th>Valor Anual:</th>
+            <th>Imagem:</th>
+        </tr>
+        <tr *ngFor="let car of car">
+            <td>{{car.name}}</td>
+            <td>{{car.model}}</td>
+            <td>{{car.year}}</td>
+            <td>{{car.annualvalue}}</td>
+            <td><img [src]="car.image" alt="list car" height="50"></td>
+        </tr>
+    </table>
+</div>
+</div>
+
