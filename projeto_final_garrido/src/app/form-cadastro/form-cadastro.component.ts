@@ -5,8 +5,8 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  templateUrl: './form-cadastro.component.html',
+  styleUrls: ['./form-cadastro.component.css']
 })
 export class FormCadastroComponent implements OnInit {
 
