@@ -10,12 +10,14 @@ import { FormCadastroComponent } from './form-cadastro/form-cadastro.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
+import { ListItemsComponent } from './list-items/list-items.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContadorComponentComponent,
-    FormCadastroComponent
+    FormCadastroComponent,
+    ListItemsComponent
   ],
   imports: [
     BrowserModule,
