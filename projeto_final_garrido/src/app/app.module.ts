@@ -13,6 +13,8 @@ import { ToastrModule } from 'ngx-toastr';
 import { ListItemsComponent } from './list-items/list-items.component';
 import { DadosAlunosComponent } from './dados-alunos/dados-alunos.component';
 import { ControleAcessoComponent } from './controle-acesso/controle-acesso.component';
+import { ComponentePaiComponent } from './componente-pai/componente-pai.component';
+import { ComponenteFilhoComponent } from './componente-filho/componente-filho.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { ControleAcessoComponent } from './controle-acesso/controle-acesso.compo
     FormCadastroComponent,
     ListItemsComponent,
     DadosAlunosComponent,
-    ControleAcessoComponent
+    ControleAcessoComponent,
+    ComponentePaiComponent,
+    ComponenteFilhoComponent
   ],
   imports: [
     BrowserModule,
