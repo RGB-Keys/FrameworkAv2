@@ -1,34 +1,47 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
-import { Router } from '@angular/router';
+
 
 @Component({
-  selector: 'app-login',
+  selector: 'app-form-cadastro',
   templateUrl: './form-cadastro.component.html',
   styleUrls: ['./form-cadastro.component.css']
 })
 export class FormCadastroComponent implements OnInit {
 
-  public formLogin:FormGroup;
+  public formCadastro:FormGroup;
 
-  constructor(private fb:FormBuilder, private route:Router, private toast:ToastrService){
-    this.formLogin = this.criarFormLogin();
+  constructor(private fb:FormBuilder, private toast:ToastrService){
+    this.formCadastro = this.criarFormCadastro();
   }
 
   ngOnInit(): void {
     throw new Error('Method not implemented.');
   }
 
-  public criarFormLogin():FormGroup{
+  public criarFormCadastro():FormGroup{
     return this.fb.group({
+      email:["", [Validators.required, Validators.minLength(10)]],
       username:["", [Validators.required, Validators.minLength(6)]],
       password:["", [Validators.required, Validators.minLength(6)]]
     })
   }
 
   public isFormControlInvalid(controlName: string):boolean{
-    return !!(this.formLogin.get(controlName)?.invalid && this.formLogin.get(controlName)?.touched)
+    return !!(this.formCadastro.get(controlName)?.invalid && this.formCadastro.get(controlName)?.touched)
+  }
+
+  criarUsuario() {
+    const { username, password } = this.formCadastro.value;
+
+    const validacao = username == 'manoel' && password == 111111;
+
+    if(validacao){
+      this.toast.success(`Olá, ${username}, seu cadastro foi realizado com sucesso.`)
+    } else {
+      this.toast.error(`Olá, informe os campos corretamente.`)
+    }
   }
 
 }
