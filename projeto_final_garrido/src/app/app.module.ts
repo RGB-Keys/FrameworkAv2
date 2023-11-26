@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { ListItemsComponent } from './list-items/list-items.component';
 import { DadosAlunosComponent } from './dados-alunos/dados-alunos.component';
+import { ControleAcessoComponent } from './controle-acesso/controle-acesso.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { DadosAlunosComponent } from './dados-alunos/dados-alunos.component';
     ContadorComponentComponent,
     FormCadastroComponent,
     ListItemsComponent,
-    DadosAlunosComponent
+    DadosAlunosComponent,
+    ControleAcessoComponent
   ],
   imports: [
     BrowserModule,
