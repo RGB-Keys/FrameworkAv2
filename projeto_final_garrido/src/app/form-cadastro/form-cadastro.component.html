@@ -9,21 +9,19 @@
             <div class="card-body">
                 <form [formGroup]="formCadastro">
                     <div class="mb-3">
-                        <label class="form-label">Email</label>
-                        <input type='email' class="form-control" formControlName="email">
-                        <div class="form-text text-danger" *ngIf="isFormControlInvalid('email')">O email não obedece as normas</div>
+                        <label class="form-label">Nome</label>
+                        <input type='text' class="form-control" formControlName="nome">
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Usuário</label>
-                        <input type="text" class="form-control" formControlName="username">
-                        <div class="form-text text-danger" *ngIf="isFormControlInvalid('username')">O usuário deve conter pelo menos 6 caracteres</div>
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-control" formControlName="email">
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Senha</label>
-                        <input type='password' class="form-control" formControlName="password">
-                        <div class="form-text text-danger" *ngIf="isFormControlInvalid('password')">A senha deve conter pelo menos 6 caracteres</div>
+                        <input type='password' class="form-control" formControlName="senha">
+                        <div [ngStyle]="{'background-color': this.validation != 'Olá, informe os campos corretamente.' ? '#66FF99': '#FFCCCB'}" >{{validation}}</div>
                     </div>
-                    <button type="button" class="btn btn-primary" [disabled]="!formCadastro.valid" (click)="criarUsuario()">
+                    <button type="button" class="btn btn-primary" [disabled]="!formCadastro.valid" (click)="validar()">
                         Entrar
                     </button>
                 </form>

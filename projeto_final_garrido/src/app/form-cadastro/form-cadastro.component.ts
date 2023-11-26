@@ -12,6 +12,8 @@ export class FormCadastroComponent implements OnInit {
 
   public formCadastro:FormGroup;
 
+  validation:string=''
+
   constructor(private fb:FormBuilder, private toast:ToastrService){
     this.formCadastro = this.criarFormCadastro();
   }
@@ -22,25 +24,22 @@ export class FormCadastroComponent implements OnInit {
 
   public criarFormCadastro():FormGroup{
     return this.fb.group({
-      email:["", [Validators.required, Validators.minLength(10)]],
-      username:["", [Validators.required, Validators.minLength(6)]],
-      password:["", [Validators.required, Validators.minLength(6)]]
+      email:[""],
+      nome:[""],
+      senha:[""]
     })
   }
 
-  public isFormControlInvalid(controlName: string):boolean{
-    return !!(this.formCadastro.get(controlName)?.invalid && this.formCadastro.get(controlName)?.touched)
-  }
+  
+  validar(){
+    const { nome, senha , email } = this.formCadastro.value;
 
-  criarUsuario() {
-    const { username, password } = this.formCadastro.value;
-
-    const validacao = username == 'manoel' && password == 111111;
+    const validacao = nome != '' && senha != '' && email != '';
 
     if(validacao){
-      this.toast.success(`Olá, ${username}, seu cadastro foi realizado com sucesso.`)
+      this.validation = `Olá, ${nome}, seu cadastro foi realizado com sucesso.`
     } else {
-      this.toast.error(`Olá, informe os campos corretamente.`)
+      this.validation = `Olá, informe os campos corretamente.`
     }
   }
 
