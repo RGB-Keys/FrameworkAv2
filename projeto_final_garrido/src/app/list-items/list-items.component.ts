@@ -11,7 +11,7 @@ export class ListItemsComponent {
   marked:number[]=[]
   valor:string=''
 
-  car: string[] = ["Ferrari 246 Dino", "Pontiac GTO", "Porsche 968", "Land Rover Defender", "Mazda RX-7 GS"];
+  car: string[] = ["Andar de bicicleta", "Escalar mangueira", "Pular corda", "Correr na Jaqueira", "Caçar Tanajura"];
   delete(index:number){
     this.car.splice(index,1)
     let presence = this.marked.indexOf(index)
