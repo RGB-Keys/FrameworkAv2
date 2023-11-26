@@ -1,24 +1,7 @@
-<div class="firstdiv">
-    <h1>Top 5 Carros Clássicos</h1>
-<br>
-<div>
-   <h3>Lista de Carros Clássicos</h3>
-    <table class="firsttable">
-        <tr>
-            <th>Nome</th>
-            <th>Modelo</th>
-            <th>Ano</th>
-            <th>Valor Anual:</th>
-            <th>Imagem:</th>
-        </tr>
-        <tr *ngFor="let car of car">
-            <td>{{car.name}}</td>
-            <td>{{car.model}}</td>
-            <td>{{car.year}}</td>
-            <td>{{car.annualvalue}}</td>
-            <td><img [src]="car.image" alt="list car" height="50"></td>
-        </tr>
-    </table>
+<div class="container">
+    <h1>Listas de Carros Clássicos</h1>
+<p>Top 5 de carros clássicos</p>
+<ul class="list-group">
+    <li *ngFor="let carro of car">{{ carro }}</li>
+</ul>
 </div>
-</div>
-
