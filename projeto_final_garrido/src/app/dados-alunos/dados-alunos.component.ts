@@ -15,6 +15,10 @@ dados: any;
   ngOnInit(): void {
     this.apiService.getProducts().subscribe(data => {
       this.dados = data;
+      for (const alunos of this.dados) {
+        var quantidade = Object.values(alunos.rendimentoEscolar).length
+        alunos.media = Object.values(alunos.rendimentoEscolar)
+      }
     })
   }
 }
