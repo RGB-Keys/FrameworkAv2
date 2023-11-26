@@ -1,7 +1,12 @@
 <div class="container">
     <h1>Listas de Carros Clássicos</h1>
-<p>Top 5 de carros clássicos</p>
+
 <ul class="list-group">
-    <li *ngFor="let carro of car">{{ carro }}</li>
+    <li *ngFor="let carro of car; index as i">
+        <p [ngStyle]="{'color': this.marked.indexOf(i) !=-1 ? 'yellow': 'purple'}">{{ carro }}</p>
+        <button mat-button color="accent" type="button" (click)="delete(i)">delete 🗑️</button>
+        <button mat-button color="primary" type="button" (click)="done(i)">check ✅</button>
+    </li>
 </ul>
 </div>
+<input [maxLength]="100" type="text" placeholder="input" [(ngModel)]="valor" (keyup.enter)="add()">
