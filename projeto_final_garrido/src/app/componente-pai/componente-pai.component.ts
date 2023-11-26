@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
 
 export class ComponentePaiComponent {
   
-  itens = ['Item 1', 'Item 2', 'Item 3'];
+  itens= ['Matemática', 'Geografia', 'Português','Física',"Quimica"];
 
 }
 
