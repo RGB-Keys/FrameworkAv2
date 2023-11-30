@@ -28,7 +28,7 @@ export class FormLoginComponent {
   senha: string = '';
 
   validar(){
-    const validacao = this.email != '' && this.senha != '';
+    const validacao = this.email === 'exemplo@exemplo.com' && this.senha === '123456';
 
     if(validacao){
       this.usuarioAutenticado = true;

@@ -10,7 +10,7 @@ export class AlunosService {
 
   constructor(private http: HttpClient) { }
 
-  getProducts(): Observable<any[]> {
+  getAlunos(): Observable<any[]> {
     return this.http.get<any[]>(this.apiUrl);
   }
 }

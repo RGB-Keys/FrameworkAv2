@@ -1,6 +1,6 @@
 <div class="container">
     <h1>Listas de tarefas</h1>
-
+    
 <ul class="list-group">
     <li *ngFor="let carro of car; index as i">
         <p [ngStyle]="{'background-color': this.marked.indexOf(i) !=-1 ? 'yellow': 'white'}">{{ carro }}</p>
@@ -8,5 +8,5 @@
         <button mat-button color="primary" type="button" (click)="done(i)">check ✅</button>
     </li>
 </ul>
-</div>
 <input [maxLength]="100" type="text" placeholder="input" [(ngModel)]="valor" (keyup.enter)="add()">
+</div>

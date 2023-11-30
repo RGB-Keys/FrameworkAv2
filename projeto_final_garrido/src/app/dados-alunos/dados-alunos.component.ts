@@ -8,17 +8,24 @@ import { AlunosService } from './alunos.service';
   styleUrls: ['./dados-alunos.component.css']
 })
 export class DadosAlunosComponent implements OnInit {
-dados: any;
+dados: any[] = [];
 
-  constructor(private apiService: AlunosService) {}
+constructor(private alunosService: AlunosService) {}
 
-  ngOnInit(): void {
-    this.apiService.getProducts().subscribe(data => {
-      this.dados = data;
-      for (const alunos of this.dados) {
-        var quantidade = Object.values(alunos.rendimentoEscolar).length
-        alunos.media = Object.values(alunos.rendimentoEscolar)
-      }
-    })
+ngOnInit() {
+  this.alunosService.getAlunos().subscribe((data) => {
+    this.dados = data;
+  });
+}
+
+calcula(rendimentoEscolar: any): number {
+  if (rendimentoEscolar) {
+    const notas = Object.values(rendimentoEscolar) as number[];
+     if (notas.length > 0) {
+      const soma = notas.reduce((acc, nota) => acc + nota, 0);
+      return soma / notas.length
+     }
   }
+  return 0;
+}
 }
